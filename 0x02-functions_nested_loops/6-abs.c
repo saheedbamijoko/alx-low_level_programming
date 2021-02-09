@@ -1,12 +1,12 @@
 #include "holberton.h"
 
 /**
- * main - function that conpute absolute value of an integer
- * n: number as integer
+ * _abs - function that conpute absolute value of an integer
+ * @n: number as integer
  * Return: absolute value
  */
 
-int int_abs(int n)
+int _abs(int n)
 {
 if (n > 0)
 return (n);
