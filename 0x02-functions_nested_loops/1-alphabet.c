@@ -2,16 +2,16 @@
 
 /**
  * main - print alphabet in lower case
- * Return: 0
+ * Return: void.
  */
 
 void print_alphabet(void)
 {
-char print_alphabet;
+int i;
 
-for (print_alphabet = 'a'; print_alphabet <= 'z'; print_alphabet++)
+for (i = 97; i < 123; i++)
 {
-_putchar(print_alphabet);
+_putchar(i);
 }
 _putchar('\n');
 
