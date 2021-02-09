@@ -5,9 +5,7 @@
  * Return: sum
  */
 
-int add(int a, int b);
-int main(void)
-
+int add(int a, int b)
 {
 return (a + b);
 }
