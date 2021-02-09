@@ -2,8 +2,8 @@
 #include <stdio.h>
 
 /**
- * main - print number n to 98
- * Return: Always 0
+ * print_to_98 - print number n to 98
+ * Return: void
  */
 
 void print_to_98(int n)
