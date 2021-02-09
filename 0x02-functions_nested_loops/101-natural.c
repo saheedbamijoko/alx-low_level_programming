@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include <stdio.h>
 
 /**
  * main - print sum of multiple of 3 and 5 below 1024
