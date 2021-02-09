@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * main - add two integers
+ * add - add two integers
  * Return: sum
  */
 
