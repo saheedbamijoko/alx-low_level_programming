@@ -2,24 +2,27 @@
 #include <stdio.h>
 
 /**
- * print_to_98 - print number n to 98
- * Return: void
+ * print_to_98 - prints all natural numbers
+ *
+ * @n: input number
+ * Return: void.
  */
 
 void print_to_98(int n)
 {
-while (n < 98)
+if (n > 98)
+{
+for (; n > 98; n--)
 {
 printf("%d, ", n);
-n++;
 }
-while (n > 98)
+}
+else if (n < 98)
 {
-printf("%d", n);
-n--;
+for (; n < 98; n++)
+{
+printf("%d, ", n);
 }
-if (n == 98)
-printf("%d", n);
-
-printf("\n");
+}
+printf("%d\n", n);
 }
