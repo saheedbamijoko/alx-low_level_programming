@@ -1,8 +1,8 @@
 #include "holberton.h"
 
 /**
- * main - check for alphabet characters
- * c: characeter to check
+ * _isalpha - check for alphabet characters
+ * @c: characeter to check
  * Return: 1 if lowercase, 0 if uppercase
  */
 
