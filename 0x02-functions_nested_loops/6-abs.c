@@ -2,12 +2,11 @@
 
 /**
  * main - function that conpute absolute value of an integer
- * @n: number as integer
+ * n: number as integer
  * Return: absolute value
  */
 
-int int_abs(int n);
-int main(void)
+int int_abs(int n)
 {
 if (n > 0)
 {
