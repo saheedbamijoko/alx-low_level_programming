@@ -1,5 +1,4 @@
 #include "holberton.h"
-  
 
 /**
 * print_square - function to print a square
