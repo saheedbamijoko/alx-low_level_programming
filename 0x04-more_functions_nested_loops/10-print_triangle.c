@@ -10,11 +10,12 @@ int row, column, k;
 
 if (size <= 0)
 _putchar('\n');
-for (row = 0; row < size; row++)
+
+for (row = 1; row <= size; row++)
 {
-for (column = size - row; column > 1; column--)
+for (column = 1; column <= (size - row); column++)
 _putchar(' ');
-for (k = row + column; k >= 1; k--)
+for (k = 1; k <= row; k++)
 _putchar('#');
 _putchar('\n');
 }
