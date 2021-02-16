@@ -16,7 +16,7 @@ len++;
 ++s;
 }
 
-/* go back to character before null character */ 
+/* go back to character before null character */
 s--;
 /* print string reversed */
 for (i = len; i > 0; i--)
