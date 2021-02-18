@@ -1,5 +1,5 @@
 #include "holberton.h"
-#include <Stdio.h>
+#include <stdio.h>
 
 /**
  * rot13 - encodes a string in rot13
