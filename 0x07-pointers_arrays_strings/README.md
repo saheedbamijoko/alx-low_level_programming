@@ -1,0 +1,1 @@
+0x07. More on pointers, arrays ans strings
