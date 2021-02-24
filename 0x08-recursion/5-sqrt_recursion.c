@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 
 /**
  * sqtRecursive - computes square root recursively doing binary search
@@ -31,7 +32,8 @@ return (-1);
  * @n: given number
  * Return: square root of n or -1
  **/
-	int _sqrt_recursion(int n)
+
+int _sqrt_recursion(int n)
 {
 if (n < 0)
 return (-1);
