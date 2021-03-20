@@ -1,71 +1,52 @@
 #include "lists.h"
+
 /**
-  * _strdup - duplicates string to malloced memory
-  * @s: input string
-  * Return: pointer to new string
-  */
-char *_strdup(const char *s)
+ * _strlen - find string length
+ * @str: string
+ * Return: length
+ */
+int _strlen(const char *str)
 {
-int count = 0, loop = 0;
+int len;
 
-char *array;
-
-if (s == NULL)
-return (NULL);
-
-while (s[count])
-count++;
-
-count++;
-
-array = malloc(count * sizeof(char));
-if (array == NULL)
-return (NULL);
-
-while (loop <= count)
-{
-array[loop] = s[loop];
-loop++;
+for (len = 0; str[len] != '\0'; len++)
+;
+return (len);
 }
 
-return (array);
-}
 /**
-  * add_node_end - add node to end of linked list
-  * @head: pointer to head node
-  * @str: pointer to node data
-  * Return: pointer to new node
-  */
+ * add_node_end - add node to end of linked list
+ * @head: linked list
+ * @str: data for new node
+ * Return: address of new element, or NULL if failed
+ */
 list_t *add_node_end(list_t **head, const char *str)
 {
-int count = 0;
+	list_t *new_node, *tmp; /* create new node */
 
-list_t *last = *head;
+if (str == NULL) /* validate input */
+return (NULL);
+if (strdup(str) == NULL) /* check if malloc errored */
+return (NULL);
 
-list_t *new_node = malloc(sizeof(list_t));
-
+new_node = malloc(sizeof(list_t)); /* malloc for new node */
 if (new_node == NULL)
-exit(1);
+return (NULL);
 
-while (str[count])
-count++;
-
-new_node->str = _strdup(str);
-
-new_node->len = count;
-
+new_node->str = strdup(str); /* set node values */
+new_node->len = _strlen(str);
 new_node->next = NULL;
 
-if (*head == NULL)
-{
+if (*head == NULL) /* if no list nodes, set new_node to beginning */
 *head = new_node;
-return (new_node);
+else
+{
+tmp = *head;
+
+while (tmp->next != NULL)
+tmp = tmp->next;
+tmp->next = new_node;
 }
-
-while (last->next != NULL)
-last = last->next;
-
-last->next = new_node;
 
 return (new_node);
 }
