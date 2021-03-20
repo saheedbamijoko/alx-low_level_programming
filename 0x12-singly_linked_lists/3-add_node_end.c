@@ -1,69 +1,71 @@
 #include "lists.h"
-#include <stdlib.h>
-#include <stdio.h>
-#include <stddef.h>
 /**
- * _strlen - gets length of the string
- * @s: string
- * Return: length of the string
- */
-int _strlen(const char *s)
+  * _strdup - duplicates string to malloced memory
+  * @s: input string
+  * Return: pointer to new string
+  */
+char *_strdup(const char *s)
 {
-int i;
+int count = 0, loop = 0;
 
-for (i = 0; s[i]; i++)
-;
-return (i);
-}
-/**
- * _strdup - recreation of string duplicate function
- * @src: source of string to duplicate
- * Return: pointer to malloc'd space with copied string
- */
-void *_strdup(const char *src)
-{
-int len, i;
-char *dest;
+char *array;
 
-len = _strlen(src);
-dest = malloc((len + 1) * sizeof(char));
-if (dest == NULL)
+if (s == NULL)
 return (NULL);
-for (i = 0; src[i]; i++)
-dest[i] = src[i];
-dest[i] = '\0';
-return (dest);
+
+while (s[count])
+count++;
+
+count++;
+
+array = malloc(count * sizeof(char));
+if (array == NULL)
+return (NULL);
+
+while (loop <= count)
+{
+array[loop] = s[loop];
+loop++;
+}
+
+return (array);
 }
 /**
- * add_node_end - add new nodes to the end of the list
- * @head: current place in the list
- * @str: string to add to the head
- * Return: pointer to current position in list
- */
+  * add_node_end - add node to end of linked list
+  * @head: pointer to head node
+  * @str: pointer to node data
+  * Return: pointer to new node
+  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-list_t *new, *current;
-char *dupstr;
+int count = 0;
 
-if (str == NULL)
-return (NULL);
-dupstr = _strdup(str);
-if (dupstr == NULL)
-return (NULL);
-new = malloc(sizeof(list_t));
-if (new == NULL)
-return (NULL);
-new->str = dupstr;
-new->len = _strlen(str);
-new->next = NULL;
+list_t *last = *head;
+
+list_t *new_node = malloc(sizeof(list_t));
+
+if (new_node == NULL)
+exit(1);
+
+while (str[count])
+count++;
+
+new_node->str = _strdup(str);
+
+new_node->len = count;
+
+new_node->next = NULL;
+
 if (*head == NULL)
 {
-*head = new;
-return (*head);
+*head = new_node;
+return (new_node);
 }
-current = *head;
-while (current->next != NULL)
-current = current->next;
-current->next = new;
-return (*head);
+
+while (last->next != NULL)
+last = last->next;
+
+last->next = new_node;
+
+return (new_node);
 }
